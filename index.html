@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script src="./script.js"></script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <header class="bg-danger text-white text-center p-2 mt-2">
+            <h2><span class="bi bi-cart3"></span> Shopping Online </h2>
+        </header>
+        <section>
+            <div class="row">
+                <div class="col-2">
+                   <div>
+                       <label class="form-label">Select Category</label>
+                       <div>
+                          <select onchange="CategoryChanged()" class="form-select" id="lstCategories">
+
+                          </select>
+                       </div>
+                   </div>
+                </div>
+                <div class="col-8">
+                    <div class="d-flex flex-wrap" id="productsContainer" style="height: 540px; overflow: auto;">
+
+                    </div>
+                </div>
+                <div class="col-2">
+                   <div class="mt-2">
+                    <button data-bs-target="#cart" onclick="LoadCartItems()" data-bs-toggle="modal" class="btn btn-outline-danger">
+                        <span class="bi bi-cart4"></span>
+                        [<span id="count"></span>] Your Cart Items
+                    </button>
+                    <div class="modal fade" id="cart">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Your Cart Items</h3>
+                                    <button data-bs-dismiss="modal" class="btn-close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Price</th>
+                                                <th>Preview</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="cartBody">
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>
